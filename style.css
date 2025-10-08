@@ -14,7 +14,7 @@ body {
     height: 100vh;
 }
 .FoodCenter {
-    margin-left: auto;
+    margin-left: auto ;
     align-self: center;
     font-size: 60px;
     color: blue;
