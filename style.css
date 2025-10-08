@@ -5,7 +5,7 @@
 body {
     background-image: url("https://t4.ftcdn.net/jpg/01/13/72/81/360_F_113728133_bImcDOXc16fX4W2MgFfm5O6oCnJirMJJ.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover ;
     margin: 20px;
     display: flex;
     flex-direction: row;
