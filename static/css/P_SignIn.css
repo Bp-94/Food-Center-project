@@ -1,6 +1,47 @@
-
+.FoodCenter {
+  font-family: "Playwrite DE SAS", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 body {
-    margin: 30px;
+    background-image: url("https://t4.ftcdn.net/jpg/01/13/72/81/360_F_113728133_bImcDOXc16fX4W2MgFfm5O6oCnJirMJJ.jpg");
+    background-repeat: no-repeat;
+    background-size: cover ;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    height: 100vh;
+    margin-right: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-right: 170px;
+    justify-content: space-between;
+  }
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25); /* ปรับค่าความเข้มที่นี่ เช่น 0.4 = มืดขึ้น */
+  z-index: 0;
+  }
+  .container_signin,.FoodCenter {
+    position: relative;
+    z-index: 1;
+}
+
+
+.container_signin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+  width: 700px;
+  box-shadow: 9px 0px 0px -2px rgba(0,0,0,1);
+-webkit-box-shadow: 9px 0px 0px -2px rgba(0,0,0,1);
+-moz-box-shadow: 9px 0px 0px -2px rgba(0,0,0,1);
 }
 .Signinusername {
 
@@ -32,7 +73,8 @@ body {
     margin-top: 2px;
 }
 .Signin {
-    font-family:'Courier New', Courier, monospace
+    font-family: "Playwrite DE SAS";
+    font-weight: 400;
 }
 /* From Uiverse.io by Gaurav-WebDev */ 
 .button {
@@ -82,6 +124,7 @@ body {
 
 /* From Uiverse.io by Samiix10 */ 
 .signinusername {
+  font-family: "Playwrite DE SAS";
   display: flex;
   flex-direction: column;
 }
@@ -113,6 +156,7 @@ body {
 /* From Uiverse.io by Samiix10 */ 
 .signinpassword {
   display: flex;
+  font-family: "Playwrite DE SAS";
   flex-direction: column;
 }
 .signinpassword label {
@@ -139,32 +183,41 @@ body {
   background-color: #ffffff;
   transform: scale(1.05);
   box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+}
 .background {
     width: 100%;
     height: 100%;
 }
-body {
-    background-image: url("https://t4.ftcdn.net/jpg/01/13/72/81/360_F_113728133_bImcDOXc16fX4W2MgFfm5O6oCnJirMJJ.jpg");
-    background-repeat: no-repeat;
-    background-size: cover ;
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-}
 .FoodCenter {
     margin-left: auto ;
     align-self: center;
-    font-size: 60px;
+    font-size: 100px;
     color: blue;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255,0.5);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
 }
 .word_food {
-    color: rgb(246, 156, 20);
+    color: #E58F4D;
 }
 .word_center {
-    color: blue;
+    color: #1F3A5F;
+}
+.signinusername label,
+.signinpassword label {
+    font-size: 25px; /* ปรับเป็นขนาดที่ต้องการ */
+}
+.signinusername .input,
+.signinpassword .input {
+    font-size: 16px; /* ปรับขนาดตัวอักษรใน input */
+    width: 300px;    /* กำหนดความกว้าง */
+}
+.button {
+    width: 150px;
+    height: 40px;
+    font-size: 16px; /* เพิ่ม font-size */
+}
+
+.Heading{
+  font-size: 50px;
 }
