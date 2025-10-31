@@ -1,0 +1,94 @@
+/* ---- General Styling ---- */
+body {
+    background-color: rgb(255, 121, 64); /* สีพื้นหลังเหมือน index1.html */
+    font-family: sans-serif; /* ใช้ฟอนต์มาตรฐาน */
+}
+
+/* ---- Card Layout ---- */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.Review {
+    font-weight: 700;
+    color: #333;
+}
+
+/* ---- Star Rating ---- */
+/* ---- Star Rating ---- */
+.rating {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  
+  /* --- โค้ดสำหรับจัดกึ่งกลาง (อัปเดตใหม่) --- */
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse; /* คงการทำงานของดาวเวลา hover ไว้ */
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  /* float: right; ถูกลบออกไป */
+  cursor: pointer;
+  color: #ccc; /* สีดาวปกติ (สีเทา) */
+  transition: color 0.3s ease;
+}
+
+.rating label:before {
+  content: '\2605';
+  font-size: 60px; /* ลดขนาดดาวลงเล็กน้อย */
+}
+
+/* --- สีดาวเมื่อถูกเลือก (ไม่เรืองแสง) --- */
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #f5c542; /* เปลี่ยนเป็นสีเหลืองส้ม */
+  text-shadow: none; /* ลบเงาเรืองแสงออก */
+}
+
+.rating input {
+  display: none;
+}
+
+
+.rating label:before {
+  content: '\2605';
+  font-size: 60px; /* ลดขนาดดาวลงเล็กน้อย */
+}
+
+/* --- สีดาวเมื่อถูกเลือก (ไม่เรืองแสง) --- */
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #f5c542; /* เปลี่ยนเป็นสีเหลืองส้ม */
+  text-shadow: none; /* ลบเงาเรืองแสงออก */
+}
+
+/* ---- Suggestion Box ---- */
+.suggestion-box {
+    text-align: center;
+}
+
+.suggestion-box h2 {
+    font-weight: 600;
+    color: #555;
+}
+
+.suggestion-box .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 40px;
+    font-size: 1rem;
+}
+
+.suggestion-box .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
