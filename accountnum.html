@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="accountnum.css">
+</head>
+<body>
+      <form class="upload-form" 
+          action="/save-accountnum-qr" 
+          method="POST">
+
+        <h3>เลือกช่องธนาคาร :</h3>
+        <select name="bank" id="banks">
+            <option value="kasiakorn">กสิกร</option>
+            <option value="aomsin">ออมสิน</option>
+            <option value="krungthai">กรุงไทย</option>
+        </select>
+               <hr>
+               <h3>เลขบัญชี :</h3>
+               <input type="tel" id="accountnum" name="accountnum" placeholder="012345678912">
+               <hr>
+               <button type="submit">บันทึกและดำเนินการต่อ</button>
+    </form>
+</body>
+</html>
