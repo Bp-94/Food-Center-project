@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/income.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <style>
     h1 {
@@ -53,13 +55,15 @@
             }
 </style>
 <body>
-    <div class="container">
-        <h1>รายรับต่อวัน</h1>
-            <div class="summary-box">
-                <p>รายรับทั้งหมด : <span id="totalRevenue">...</span> บาท</p>
-                <p>กำไรทั้งหมด : <span id="netProfit">...</span> บาท</p>
-            </div>
-            <button class="ok-button" onclick="history.back()">ตกลง</button>
+    <div class="container-fluid">
+        <div class="container">
+            <h1>รายรับต่อวัน</h1>
+                <div class="summary-box">
+                    <p>รายรับทั้งหมด : <span id="totalRevenue">...</span> บาท</p>
+                    <p>กำไรทั้งหมด : <span id="netProfit">...</span> บาท</p>
+                </div>
+                <button class="ok-button" onclick="history.back()">ตกลง</button>
+        </div>
     </div>
 </body>
 </head>
