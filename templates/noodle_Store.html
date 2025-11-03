@@ -21,8 +21,38 @@
         </div>
     </nav>
     <a href="index.html"class="back">BACK</a>
-    
-    <nav class="noodleone">
+    <div class="container my-5">
+    <h2 class="text-center mb-4 text-white fw-bold">เมนูอาหารของคุณ</h2>
+
+    <div class="row g-4">
+        {% for menu in menus %}
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 shadow border-0">
+                {% if menu.image %}
+                <img src="{{ url_for('static', filename='uploads/' + menu.image) }}" class="card-img-top" alt="{{ menu.menu_name }}">
+                {% else %}
+                <img src="{{ url_for('static', filename='default_food.jpg') }}" class="card-img-top" alt="default image">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ menu.menu_name }}</h5>
+                    <p class="card-text text-muted">
+                        {% if menu.description %}
+                            {{ menu.description }}
+                        {% else %}
+                            ไม่มีรายละเอียดเพิ่มเติม
+                        {% endif %}
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold text-success fs-5">{{ menu.price }} บาท</span>
+                        <button class="btn btn-sm btn-outline-success">เพิ่มลงตะกร้า</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+    <!-- <nav class="noodleone">
         <div class="noodleee">
             <img src="https://th.bing.com/th/id/OIP.TV16wRxCEOMMsiDn0D_2OwHaEI?w=304&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3" alt="store1" class="store1">
             <h3 class="mm">1.ก๋วยเตี๋ยว</h3>
@@ -186,7 +216,7 @@
             </button>
         </div>
     </div>
-        </div>
+        </div> -->
         <script src="script.js"></script>
     </body>
     </html>

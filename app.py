@@ -54,34 +54,6 @@ def U_P():
             return "รหัสผ่านไม่ถูกต้อง"
     else:
         return "ไม่พบบัญชีผู้ใช้"
-
-@app.route('/customer' )
-def customer():
-    return render_template('store.html')
-@app.route('/noodle')
-def noodle_page():
-    return render_template('noodle.html')
-
-@app.route('/pay')
-def pay_page():
-    return render_template('pay.html')
-
-@app.route('/order')
-def order_page():
-    return render_template('order.html')
-
-@app.route('/account')
-def account_page():
-    return render_template('account.html')
-
-@app.route('/seller')
-def menu_page():
-    return render_template("main_menu.html")
-
-@app.route('/income')
-def income():
-    return render_template("income.html")
-
 @app.route('/foodform')
 def foodform():
     if request.method == 'POST':
@@ -107,11 +79,48 @@ def foodform():
         conn.commit()
         conn.close()
 
+        if shop_name == "ร้านก๋วยเตี๋ยว":
+            return redirect
         return redirect(f'/shop/{shop_name}')
     else:
         shop_name = request.args.get('shop_name')
         return render_template('foodform.html', shop_name=shop_name)
 
+@app.route('/noodle')
+def noodle_page():
+    return render_template('noodle.html')
+
+@app.route('/koje')
+def koje_page():
+    return render_template('koje_store.html')
+
+@app.route('/kaomankai')
+def kaomanki_page():
+    return render_template('kaomankai_store.html')
+@app.route('/pay')
+def pay_page():
+    return render_template('pay.html')
+
+@app.route('/order')
+def order_page():
+    return render_template('order.html')
+@app.route('/customer' )
+def customer():
+    return render_template('store.html')
+
+@app.route('/account')
+def account_page():
+    return render_template('account.html')
+
+@app.route('/seller')
+def menu_page():
+    return render_template("main_menu.html")
+
+@app.route('/income')
+def income():
+    return render_template("income.html")
+
+
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
