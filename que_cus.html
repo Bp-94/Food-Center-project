@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สถานะออเดอร์ (Buyer View)</title>
+    <link rel="stylesheet" href="que.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container buyer-view">
+        <h2>สถานะออเดอร์ของคุณ</h2>
+
+        <div class="status-card" data-order-id="101">
+            <div class="queue-number">
+                <p>คิวของคุณ</p>
+                <span>#101</span>
+            </div>
+
+            <div class="order-summary">
+                <h4>รายการที่สั่ง</h4>
+                <ul>
+                    <li>
+                        <span>กะเพราหมูสับ (x1)</span>
+                        <span>50฿</span>
+                    </li>
+                    <li>
+                        <span>ไข่ดาว (x1)</span>
+                        <span>10฿</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="total-price">
+                <h4>ยอดรวมทั้งสิ้น</h4>
+                <p>60 บาท</p>
+            </div>
+
+            <div class="order-status">
+                <h4>สถานะ</h4>
+                <p id="status-text">กำลังเตรียมอาหาร...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="buyer.js" defer></script>
+
+</body>
+</html>

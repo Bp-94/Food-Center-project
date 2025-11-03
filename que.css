@@ -1,0 +1,182 @@
+/* --- ค่าเริ่มต้นและตัวแปร --- */
+:root {
+    --primary-color: coral; /* สีส้มแดง (Tomato) */
+    --secondary-color: #4CAF50; /* สีเขียว (Success) */
+    --bg-color: #f4f4f8;        /* สีพื้นหลังเทาอ่อน */
+    --card-bg: #ffffff;       /* สีการ์ด (ขาว) */
+    --text-color: #333333;      /* สีตัวอักษร */
+    --border-radius: 8px;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* ความกว้างสูงสุดบนจอใหญ่ */
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+/* --- 1. สไตล์ฝั่งผู้ขาย (Seller View) --- */
+/* (เรายังเก็บ .seller-view ไว้ แม้จะอยู่คนละไฟล์) */
+
+/* (Mobile-First) ออกแบบสำหรับมือถือก่อน: 1 คอลัมน์ */
+.order-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 คอลัมน์สำหรับจอมือถือ */
+    gap: 20px; /* ระยะห่างระหว่างการ์ด */
+}
+
+.order-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    border-left: 5px solid var(--primary-color);
+    transition: transform 0.2s ease;
+}
+
+.order-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.order-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.order-card ul li {
+    margin-bottom: 5px;
+}
+
+.btn-done {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-done:hover {
+    background-color: #858585;
+}
+
+
+/* --- 2. สไตล์ฝั่งผู้ซื้อ (Buyer View) --- */
+/* (เรายังเก็บ .buyer-view ไว้ แม้จะอยู่คนละไฟล์) */
+
+.status-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    /* (Mobile-First) บนมือถือจะกว้างเต็มที่ */
+    /* (Desktop) เราจะกำหนด max-width ด้านล่างใน Media Query */
+}
+
+.queue-number {
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+}
+
+.queue-number p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.queue-number span {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.order-summary h4,
+.total-price h4,
+.order-status h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 8px;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-summary ul li {
+    display: flex;
+    justify-content: space-between; /* แยกชื่อเมนูกับราคา */
+    padding: 8px 0;
+}
+
+.total-price p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: right;
+    color: var(--primary-color);
+    margin: 10px 0 0 0;
+}
+
+.order-status p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #007bff; /* สีน้ำเงินสำหรับสถานะ */
+    text-align: center;
+    background: #f0f8ff;
+    padding: 15px;
+    border-radius: var(--border-radius);
+}
+
+
+/* ==================================
+   ✨ 3. หัวใจของ Responsive (Media Queries) ✨
+   ================================== */
+
+/* เมื่อหน้าจอมีความกว้าง 768px ขึ้นไป (เช่น แท็บเล็ต) */
+@media (min-width: 768px) {
+    
+    /* Seller View: เปลี่ยนเป็น 2 คอลัมน์ */
+    .order-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+    }
+
+    /* Buyer View: ทำให้การ์ดไม่กว้างเกินไปบนจอใหญ่ */
+    .status-card {
+        max-width: 600px; /* กำหนดความกว้างสูงสุด */
+        margin: 0 auto; /* จัดกลาง */
+    }
+}
+
+/* เมื่อหน้าจอมีความกว้าง 1024px ขึ้นไป (เช่น เดสก์ท็อป) */
+@media (min-width: 1024px) {
+    
+    /* Seller View: เปลี่ยนเป็น 3 คอลัมน์ */
+    .order-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    }
+}
