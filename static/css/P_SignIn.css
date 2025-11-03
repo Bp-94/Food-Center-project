@@ -38,7 +38,8 @@ body::before {
     flex-direction: column;
     align-items: center;
     background-color: #ffffff;
-  width: 700px;
+  width: 100%;
+  height: 100%;
   box-shadow: 9px 0px 0px -2px rgba(0,0,0,1);
 -webkit-box-shadow: 9px 0px 0px -2px rgba(0,0,0,1);
 -moz-box-shadow: 9px 0px 0px -2px rgba(0,0,0,1);
@@ -146,7 +147,7 @@ body::before {
   position: relative;
   margin-top: 10px;
   height: 1px;
-  width: 300px;
+  width: 100%;
 }
 .signinusername .input:focus {
   background-color: #ffffff;
@@ -189,7 +190,8 @@ body::before {
     height: 100%;
 }
 .FoodCenter {
-    margin-left: auto ;
+    margin-left: 50% ;
+    text-align: center;
     align-self: center;
     font-size: 100px;
     color: blue;
@@ -210,7 +212,7 @@ body::before {
 .signinusername .input,
 .signinpassword .input {
     font-size: 16px; /* ปรับขนาดตัวอักษรใน input */
-    width: 300px;    /* กำหนดความกว้าง */
+    width: 100%;    /* กำหนดความกว้าง */
 }
 .button {
     width: 150px;
