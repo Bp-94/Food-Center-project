@@ -105,22 +105,23 @@
                 
                 <fieldset class="mb-4">
                     <legend class="mb-3"> กรอกเมนูที่ท่านจะขาย</legend>
+                    <input type="hidden" name="shop_name" value="{{ shop_name }}">
                     <div class="mb-3">
                         <label for="menu-name" class="form-label"><strong>ชื่อเมนู*</strong></label>
-                        <input type="text" class="form-control" id="menu-name" placeholder="เช่น หมูกรอบผัดกะเพรากับไข่ดาว" required>
+                        <input type="text" class="form-control" id="menu-name" name="menu_name" placeholder="เช่น หมูกรอบผัดกะเพรากับไข่ดาว" required>
                     </div>
                     <div class="mb-3">
                         <label for="menu-description" class="form-label"><strong>รายละเอียดเมนู</strong></label>
-                        <textarea class="form-control" id="menu-description" rows="3" placeholder="เพิ่มคำอธิบายสั้น ๆ ที่ดึงดูดใจสำหรับลูกค้าของคุณ."></textarea>
+                        <textarea class="form-control" id="menu-description" rows="3" name="description" placeholder="เพิ่มคำอธิบายสั้น ๆ ที่ดึงดูดใจสำหรับลูกค้าของคุณ."></textarea>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="menu-price" class="form-label"><strong>ราคา*</strong></label>
-                            <input type="number" class="form-control" id="menu-price" placeholder="" min="0" step="1" required>
+                            <input type="number" class="form-control" id="menu-price" name="price" placeholder="" min="0" step="1" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="menu-image" class="form-label"><strong>ภาพเมนู</strong></label>
-                            <input class="form-control" type="file" id="menu-image" accept="image/*">
+                            <input class="form-control" type="file" id="menu-image" name="image" accept="image/*">
                         </div>
                     </div>
                 </fieldset>
