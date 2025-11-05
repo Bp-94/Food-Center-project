@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="promptpay.css">
+</head>
+<body>
+    <form class="upload-form " 
+          action="/save-promptpay-qr" 
+          method="POST" 
+          enctype="multipart/form-data">
+
+        <h1>อัปโหลด QR Code</h1>
+        
+        <p>โปรดเลือกไฟล์ภาพ QR Code ของคุณ:</p>
+
+                <input type="file" name="qr_code_image" id="qr-upload" accept="image/png, image/jpeg" required>
+               <hr>
+               <p>หรือ เบอร์ PromptPay</p>
+               <input type="hidden" name="payment_method" value="cash">
+               <input type="hidden" name="shop_name" value="{{ shop_name }}">
+               <input type="tel" id="PromptPay Number" name="promptpay_number" placeholder="0123456789">
+               <hr>
+               <button type="submit">บันทึกและดำเนินการต่อ</button>
+
+    </form>
+    
+</body>
+</html>

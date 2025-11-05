@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.upload-form {
+    border: 2px solid;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: beige;
+    width: 400px;
+    
+}

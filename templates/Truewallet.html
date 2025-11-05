@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="truewallet.css">
+</head>
+<body>
+    <form class="upload-form" action="/truemoney" method="POST">
+        <input type="hidden" name="shop_name" value="{{ shop_name }}">
+        <input type="hidden" name="payment_method" value="cash">
+        <h1>อัปโหลดเบอร์ TrueMoney Wallet</h1>
+        <input type="tel" id="TrueMoney_Wallet_Number" name="TrueMoney_Wallet_number" placeholder="0123456789">
+        <hr>
+        <button type="submit">บันทึกและดำเนินการต่อ</button>
+    /form>
+</body>
+</html>

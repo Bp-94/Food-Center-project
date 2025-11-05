@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เลือกวิธีชำระเงิน</title>
+    <link rel="stylesheet" href="/static/css/payment.css">
+</head>
+<body>
+    <h1 class="select">เลือกวิธีการชำระเงิน</h1>
+    <div class="container">
+ฆ
+        <div class="button">
+            <form action="/promptpay" method="get">
+                <input type="hidden" name="shop_name" value="{{ shop_name }}">
+                <button class="pp">PromptPay</button>
+                {% if payment_status.promptpay %}
+                    ✅ เรียบร้อยแล้ว
+                {% endif %}
+            </form>
+
+            <form action="/truemoney" method="get">
+                <input type="hidden" name="shop_name" value="{{ shop_name }}">
+                <button class="true">Truemoney</button>
+                {% if payment_status.truemoney %}
+                    ✅ เรียบร้อยแล้ว
+                {% endif %}
+            </form>
+        </div>
+
+        <div class="button2">
+            <form action="/cash" method="get">
+                <input type="hidden" name="shop_name" value="{{ shop_name }}">
+                <button class="cash">เงินสด</button>
+                {% if payment_status.cash %}
+                    ✅ เรียบร้อยแล้ว
+                {% endif %}
+            </form>
+
+            <form action="/bank_account" method="get">
+                <input type="hidden" name="shop_name" value="{{ shop_name }}">
+                <button class="accountnum">เลขบัญชี</button>
+                {% if payment_status.bank %}
+                    ✅ เรียบร้อยแล้ว
+                {% endif %}
+            </form>
+        </div>
+
+        {% if done %}
+            <p style="color: green;">ตั้งค่าการชำระเงิน {{ done }} สำเร็จแล้ว ✅</p>
+        {% endif %}
+    </div>
+</body>
+</html>

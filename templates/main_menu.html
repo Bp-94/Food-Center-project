@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>เมนูผู้ขาย</title>
     <link rel="stylesheet" href="/static/css/main_menu.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
@@ -14,10 +14,10 @@
             <button class="noti"></button>
         </nav>
         <div class="seller">
-        <button class="menu" onclick="location.href='/food_menu?shop_name={{ shop_name }}'">เมนู</button>
-        <button class="revenue" ><a href="/income">รายรับทั้งหมด</a></button>
+        <button class="menu" onclick="location.href='/foodform?shop_name={{ shop_name }}'">เมนู</button>
+        <button class="revenue" >รายรับทั้งหมด</button>
         <button class="order">รายการสั่งซื้อ</button>
-        <button class="payment">วิธีการชำระเงิน</button>
+        <button class="payment" onclick="location.href='/payment?shop_name={{ shop_name }}'">วิธีการชำระเงิน</button>
         </div>
     </div>
     <script src="/static/js/main_menu.js"></script>

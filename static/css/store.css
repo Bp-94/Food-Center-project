@@ -1,3 +1,70 @@
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto; /* จัดให้อยู่ตรงกลางของหน้า */
+}
+.card {
+    border-radius: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- รูปอาหาร ---------- */
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 220px;
+    width: 300px;
+    object-fit: cover;
+}
+
+/* ---------- เนื้อหาการ์ด ---------- */
+.card-body {
+    padding: 20px;
+}
+
+/* ---------- ปุ่ม ---------- */
+.btn-outline-success {
+    border-color: #ff9900;
+    color: #ff9900;
+    font-weight: 500;
+      border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.btn-outline-success:hover {
+    background-color: #ff9900;
+    color: #fff;
+}
+
+/* ---------- ราคาสินค้า ---------- */
+.card .fs-5 {
+    color: #ff9100;
+}
+
+/* ---------- layout responsive ---------- */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 180px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+}
 .searchbar {
     display: flex;
     justify-content: center;
@@ -414,9 +481,14 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
-
+.shn{
+  display: flex;
+  align-items: center;
+}
 .noodleee {
   display: flex;
+  flex-direction: row;
+  
   align-items: center;
   background-color: #ff8040;
   color: #ffffff;

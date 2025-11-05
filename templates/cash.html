@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cash.css">
+</head>
+<body>
+    <div class="payment-option-container">
+
+    <h1>ยืนยันเลือกการชำระเงินสด</h1>
+
+   <form class="cash-payment-form" action="/cash" method="POST">
+          <input type="hidden" name="shop_name" value="{{ shop_name }}">
+          <input type="hidden" name="payment_method" value="cash">
+          <input type="hidden" name="order_id" value="12345"> <button type="submit">ยืนยัน</button>
+    </form>
+    
+</div>
+</form>
+</form>
+</body>
+</html>

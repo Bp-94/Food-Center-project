@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash</title>
+    <link rel="stylesheet" href="/static/css/confirm.css">
+</head>
+<body class="cashpage">
+    <div class="promtpaay">
+        <h3>ชื่อเมนู : {{ menu_name }}</h3>
+        <h4>ราคา {{ price }} ฿</h4>
+        <h3>ชื่อผู้ใช้ : {{ username }}</h3>
+    </div>
+    <form action="" method="post">
+        <button class="payybutton" type="submit">
+            ชำระเงิน
+        </button>
+    </form>
+    <script src="store.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ชำระเงินด้วย truewallet</title>
+    <link rel="stylesheet" href="/static/css/confirm.css">
+</head>
+<body class="cashpage">
+    <div class="promtpaay">
+        
+        <h2>รายละเอียดการชำระเงิน (PromptPay)</h2>
+        <p>ชื่อผู้ใช้: {{ username }}</p>
+        <p>เมนูที่สั่ง: {{ menu_name }}</p>
+        <p>ราคา: {{ price }} บาท</p>
+        <p>เบอร์ Truewallet ร้านค้า:  {{ truemoney_number }}</p>
+    </div>
+    <form action="" method="post">
+        <button class="payybutton" type="submit">
+            ชำระเงิน
+        </button>
+    </form>
+
+</body>
+</html>

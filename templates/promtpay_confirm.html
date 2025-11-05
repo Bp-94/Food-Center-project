@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promtpay</title>
+    <link rel="stylesheet" href="../static/css/confirm.css">
+</head>
+<body class="payment-page">
+    <div class="promtpaay" class="qr_image">
+        {% if promptpay_qr_filename %}
+            <img src="{{ url_for('static', filename='uploads/' + promptpay_qr_filename) }}" alt="PromptPay QR Code">
+        {% else %}
+            <p>(ร้านค้านี้ยังไม่ได้อัปโหลด QR Code)</p>
+        {% endif %}
+        <h3>เลขบัญชี : {{ promptpay_number }}</h3>
+        <h3>ชื่อเมนู : {{ menu_name }}</h3>
+        <h4>ราคา {{ price }} ฿</h4>
+        <h3>ชื่อผู้ใช้ : {{ username }}</h3>
+    </div>
+    <form action="" method="post">
+        <button class="payybutton" type="submit">
+            ชำระเงิน
+        </button>
+    </form>
+    <script src="store.js"></script>
+</body>
+</html>

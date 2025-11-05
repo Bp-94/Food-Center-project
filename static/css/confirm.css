@@ -1,0 +1,146 @@
+.payment-page, .buncheepage {
+    background-color: #f3f4f6;  /* พื้นหลังเทาอ่อน */
+    font-family: 'Prompt', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.promtpaay {
+    text-align: center;
+    background: #fff;
+    padding: 40px 60px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.promtpaay img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #eee;
+}
+
+.promtpaay h3,
+.promtpaay h4 {
+    margin: 10px 0;
+    color: #111;
+}
+
+.payybutton {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(15, 15, 15);
+  border: none;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+.svgIcon {
+  width: 16px;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.payybutton::before {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  content: "";
+  background-color: #ffffff;
+  border-radius: 50%;
+  left: -100%;
+  top: 0;
+  transition-duration: .3s;
+  mix-blend-mode: difference;
+}
+
+.payybutton:hover::before {
+  transition-duration: .3s;
+  transform: translate(100%,-50%);
+  border-radius: 0;
+}
+
+.payybutton:active {
+  transform: translate(5px,5px);
+  transition-duration: .3s;
+}
+
+.cashpage {
+    background-color: #f3f4f6;  /* พื้นหลังเทาอ่อน */
+    font-family: 'Prompt', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.cashcash {
+    text-align: center;
+    background: #fff;
+    padding: 40px 60px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cashcash img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #eee;
+}
+
+.cashcash h3,
+.cashcash h4 {
+    margin: 10px 0;
+    color: #111;
+}
+.bunchee {
+    text-align: center;
+    background: #fff;
+    padding: 40px 60px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.bunchee img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #eee;
+}
+
+.bunchee h3,
+.bunchee h4 {
+    margin: 10px 0;
+    color: #111;
+}
+
+.qr_image{
+  max-width: 500px;
+  max-height: 500px;
+}

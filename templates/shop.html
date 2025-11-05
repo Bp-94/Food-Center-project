@@ -20,43 +20,55 @@
             <a href="account.html"><button class="icon-btn" title="โปรไฟล์">👤</button></a>
         </div>
     </nav>
-    <a href="index.html"class="back">BACK</a>
-    <div class="container my-5">
-    <h2 class="text-center mb-4 text-white fw-bold">เมนูอาหารของคุณ</h2>
-
-    <div class="row g-4">
+    <a href="/shops"class="back">BACK</a>
+    <div class="container my-5 text-center">
+        <h2 class="text-center mb-4 text-white fw-bold">เมนูอาหารของคุณ</h2>
+        <nav class="noodleone">
+            <div class="noodleee">
+                <div>
+                    <img src="{{shop_image}}" alt="store1" class="store1">
+                </div>
+                <div class="shn">
+                    <h3 class="mm">{{shop_name}}</h3>
+                </div>
+            </nav>
+    </div>
+      <div class="row justify-content-center g-4">
         {% for menu in menus %}
-        <div class="col-md-4 col-sm-6">
-            <div class="card h-100 shadow border-0">
-                {% if menu.image %}
-                <img src="{{ url_for('static', filename='uploads/' + menu.image) }}" class="card-img-top" alt="{{ menu.menu_name }}">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card h-100 shadow border-0 text-center">
+                {% if menu[3] %}
+                    <img src="{{ url_for('static', filename='uploads/' + menu[3]) }}" 
+                         class="card-img-top" alt="{{ menu[0] }}" 
+                         style="height: 200px; object-fit: cover;">
                 {% else %}
-                <img src="{{ url_for('static', filename='default_food.jpg') }}" class="card-img-top" alt="default image">
+                    <img src="{{ url_for('static', filename='default_food.jpg') }}" 
+                         class="card-img-top" alt="default image"
+                         style="height: 200px; object-fit: cover;">
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title fw-bold">{{ menu.menu_name }}</h5>
+                    <h5 class="card-title fw-bold">{{ menu[0] }}</h5>
                     <p class="card-text text-muted">
-                        {% if menu.description %}
-                            {{ menu.description }}
-                        {% else %}
-                            ไม่มีรายละเอียดเพิ่มเติม
-                        {% endif %}
+                        {{ menu[2] or "ไม่มีรายละเอียดเพิ่มเติม" }}
                     </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="fw-bold text-success fs-5">{{ menu.price }} บาท</span>
-                        <button class="btn btn-sm btn-outline-success">เพิ่มลงตะกร้า</button>
+                    <div class="d-flex justify-content-center align-items-center gap-3">
+                        <span class="price fw-bold text-success fs-5">{{ menu[1] }} บาท</span>
+                        <form action="/order_payment" method="get">
+                            <input type="hidden" name="shop_name" value="{{ shop_name }}">
+                            <input type="hidden" name="menu_name" value="{{ menu[0] }}">
+                            <input type="hidden" name="price" value="{{ menu[1] }}">
+                            <button class="btn btn-sm btn-outline-success" type="submit">
+                                สั่งอาหาร
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-    </div>
-    <!-- <nav class="noodleone">
-        <div class="noodleee">
-            <img src="https://th.bing.com/th/id/OIP.TV16wRxCEOMMsiDn0D_2OwHaEI?w=304&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3" alt="store1" class="store1">
-            <h3 class="mm">1.ก๋วยเตี๋ยว</h3>
-        </nav>
+</div>
+    <!-- </div>
         <div class="base">
             <div class="raikarn">
                 <h3>รายการอาหาร</h3>
