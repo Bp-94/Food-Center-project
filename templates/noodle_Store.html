@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เมนู</title>
+    <link rel="stylesheet" href="/static/css/store.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- ปุ่มเมนู (ซ้าย) -->
+        <div class="nav-left">
+            <button class="menu-btn">☰</button>
+            <div class="dropdown-menu" id="dropdown">
+                <a href="#">ล็อกเอาท์</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="order.html"><button class="icon-btn" title="ตะกร้าสินค้า">🛒</button></a>
+            <a href="account.html"><button class="icon-btn" title="โปรไฟล์">👤</button></a>
+        </div>
+    </nav>
+    <a href="index.html"class="back">BACK</a>
+    <div class="container my-5">
+    <h2 class="text-center mb-4 text-white fw-bold">เมนูอาหารของคุณ</h2>
+
+    <div class="row g-4">
+        {% for menu in menus %}
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 shadow border-0">
+                {% if menu.image %}
+                <img src="{{ url_for('static', filename='uploads/' + menu.image) }}" class="card-img-top" alt="{{ menu.menu_name }}">
+                {% else %}
+                <img src="{{ url_for('static', filename='default_food.jpg') }}" class="card-img-top" alt="default image">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ menu.menu_name }}</h5>
+                    <p class="card-text text-muted">
+                        {% if menu.description %}
+                            {{ menu.description }}
+                        {% else %}
+                            ไม่มีรายละเอียดเพิ่มเติม
+                        {% endif %}
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold text-success fs-5">{{ menu.price }} บาท</span>
+                        <button class="btn btn-sm btn-outline-success">เพิ่มลงตะกร้า</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+    <!-- <nav class="noodleone">
+        <div class="noodleee">
+            <img src="https://th.bing.com/th/id/OIP.TV16wRxCEOMMsiDn0D_2OwHaEI?w=304&h=180&c=7&r=0&o=7&cb=12&dpr=1.1&pid=1.7&rm=3" alt="store1" class="store1">
+            <h3 class="mm">1.ก๋วยเตี๋ยว</h3>
+        </nav>
+        <div class="base">
+            <div class="raikarn">
+                <h3>รายการอาหาร</h3>
+            </div>
+            <div class="menuu">
+                <div class="menu">
+                    <img src="https://i.pinimg.com/736x/35/1d/6a/351d6ae967ad463509dbcb1fd7b8f79c.jpg" alt="clear" class="clear">
+                    <p class="yumm">ก๋วยเตี๋ยวหมูน้ำใส</p>
+
+                    <div class="price-and-button">
+                        <span class="eiei">40฿</span>
+                        <button class="special-button1" data-pop="pop"><span>สั่ง</span></button>
+                        </button>
+                    </div>
+                </div>
+                <div class="menu">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.IsgW9Lk4y3HmgZ5ptCVv5gHaD4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="yum" class="clear">
+
+                    <p class="yumm">ก๋วยเตี๋ยวต้มยำ</p>
+
+                    <div class="price-and-button">
+                        <span class="eiei">40฿</span>
+                        <button class="special-button2" data-pop="pop2"><span>สั่ง</span></button>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        <div class="menu2">
+            <div class="menu">
+                <img src="https://img.wongnai.com/p/1920x0/2016/06/16/2f119e954b4e426296ab89e36a548339.jpg" alt="yen" class="clear">
+                <p class="yumm">ก๋วยเตี๋ยวเย็นตาโฟ</p>
+
+                <div class="price-and-button">
+                        <span class="eiei">40฿</span>
+                        <button class="special-button3" data-pop="pop3"><span>สั่ง</span></button>
+                        </button>
+                    </div>
+            </div>
+            <div class="menu">
+                <img src="https://i.pinimg.com/originals/35/9a/ba/359aba990fd3179a2f70ef59c099d001.jpg" alt="yen" class="clear">
+
+                <p class="yumm">ก๋วยเตี๋ยวแห้ง</p>
+
+                <div class="price-and-button">
+                        <span class="eiei">40฿</span>
+                        <button class="special-button4" data-pop="pop4"><span>สั่ง</span></button>
+                        </button>
+                    </div>
+            </div>
+        </div>
+    <div class="pop" id="pop">
+        <div class="form_sung">
+            <button class="back-button" onclick="goBackPage()">
+                <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                    <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+                </svg>
+                <span>Back</span>
+            </button>
+            <img src="https://i.pinimg.com/736x/35/1d/6a/351d6ae967ad463509dbcb1fd7b8f79c.jpg" alt="clear1" class="clear1">
+            ก๋วยเตี๋ยวหมูน้ำใส
+            <div class="sen">
+                <h3>เส้น</h3>
+                <p><input type="checkbox">เส้นเล็ก</p>
+                <p><input type="checkbox">เส้นใหญ่</p>
+                <p><input type="checkbox">หมี่เหลือง</p>
+            </div>
+            <div class="quantity-selector">
+                <button class="minus">-</button>
+                <input type="text" class="qty" value="1" readonly>
+                <button class="plus">+</button>
+            </div>
+            <button class="paybutton" onclick="gotopage()">
+                ชำระเงิน
+                <svg class="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pop2" id="pop2">
+        <div class="form_sung">
+            <button class="back-button" onclick="goBackPage()">
+                <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                    <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+                </svg>
+                <span>Back</span>
+            </button>
+            <img src="https://tse4.mm.bing.net/th/id/OIP.IsgW9Lk4y3HmgZ5ptCVv5gHaD4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="clear1" class="clear1">
+            ก๋วยเตี๋ยวหมูต้มยำ
+            <div class="sen">
+                <h3>เส้น</h3>
+                <p><input type="checkbox">เส้นเล็ก</p>
+                <p><input type="checkbox">เส้นใหญ่</p>
+                <p><input type="checkbox">หมี่เหลือง</p>
+            </div>
+            <div class="quantity-selector">
+                <button class="minus">-</button>
+                <input type="text" class="qty" value="1" readonly>
+                <button class="plus">+</button>
+            </div>
+            <button class="paybutton" onclick="gotopage()">
+                ชำระเงิน
+                <svg class="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pop3" id="pop3">
+        <div class="form_sung">
+            <button class="back-button" onclick="goBackPage()">
+                <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                    <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+                </svg>
+                <span>Back</span>
+            </button>
+            <img src="https://img.wongnai.com/p/1920x0/2016/06/16/2f119e954b4e426296ab89e36a548339.jpg" alt="clear1" class="clear1">
+            ก๋วยเตี๋ยวเย็นตาโฟ
+            <div class="sen">
+                <h3>เส้น</h3>
+                <p><input type="checkbox">เส้นเล็ก</p>
+                <p><input type="checkbox">เส้นใหญ่</p>
+                <p><input type="checkbox">หมี่เหลือง</p>
+            </div>
+            <div class="quantity-selector">
+                <button class="minus">-</button>
+                <input type="text" class="qty" value="1" readonly>
+                <button class="plus">+</button>
+            </div>
+            <button class="paybutton" onclick="gotopage()">
+                ชำระเงิน
+                <svg class="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="pop4" id="pop4">
+        <div class="form_sung">
+            <button class="back-button" onclick="goBackPage()">
+                <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                    <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+                </svg>
+                <span>Back</span>
+            </button>
+            <img src="https://i.pinimg.com/originals/35/9a/ba/359aba990fd3179a2f70ef59c099d001.jpg" alt="clear1" class="clear1">
+            ก๋วยเตี๋ยวแห้ง
+            <div class="sen">
+                <h3>เส้น</h3>
+                <p><input type="checkbox">เส้นเล็ก</p>
+                <p><input type="checkbox">เส้นใหญ่</p>
+                <p><input type="checkbox">หมี่เหลือง</p>
+            </div>
+            <div class="quantity-selector">
+                <button class="minus">-</button>
+                <input type="text" class="qty" value="1" readonly>
+                <button class="plus">+</button>
+            </div>
+            <button class="paybutton" onclick="gotopage()">
+                ชำระเงิน
+                <svg class="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+            </button>
+        </div>
+    </div>
+        </div> -->
+        <script src="script.js"></script>
+    </body>
+    </html>
