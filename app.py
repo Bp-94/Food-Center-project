@@ -1,4 +1,4 @@
-#import os , uuid
+import os , uuid
 from flask import Flask, render_template,request,redirect, url_for,session
 import sqlite3
 from werkzeug.utils import secure_filename
