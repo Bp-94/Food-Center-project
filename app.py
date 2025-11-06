@@ -64,7 +64,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/')
 def login_page():
-    return render_template('P_Signin.html')
+    return render_template('P_SignIn.html')
 
 @app.route('/login', methods=['POST'])
 def U_P():
